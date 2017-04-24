@@ -10,6 +10,7 @@ import org.usfirst.frc.team1923.robot.subsystems.ClimberSubsystem;
 import org.usfirst.frc.team1923.robot.subsystems.DebugSubsystem;
 import org.usfirst.frc.team1923.robot.subsystems.DrivetrainSubsystem;
 import org.usfirst.frc.team1923.robot.subsystems.GearSubsystem;
+import org.usfirst.frc.team1923.robot.subsystems.ShooterSubsystem;
 import org.usfirst.frc.team1923.robot.subsystems.VisionSubsystem;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
@@ -33,6 +34,7 @@ public class Robot extends IterativeRobot {
     public static DrivetrainSubsystem driveSubSys;
     public static GearSubsystem gearSubSys;
     public static VisionSubsystem visionSubSys;
+    public static ShooterSubsystem shooterSubSys;
     public static OI oi;
 
     private Command autonomousCommand;
@@ -48,6 +50,7 @@ public class Robot extends IterativeRobot {
         climbSubSys = new ClimberSubsystem();
         visionSubSys = new VisionSubsystem();
         debugSubSys = new DebugSubsystem();
+        shooterSubSys = new ShooterSubsystem();
 
         oi = new OI();
 
@@ -118,9 +121,8 @@ public class Robot extends IterativeRobot {
      */
     @Override
     public void teleopPeriodic() {
-        if (RobotMap.DEBUG) {
-            SmartDashboard.putNumber("Ultrasonic", Robot.visionSubSys.getDistance());
-        }
+        Robot.shooterSubSys.set((int) (12000 * Robot.oi.op.getY()));
+        System.out.println(Robot.shooterSubSys.getRPM());
         Scheduler.getInstance().run();
     }
 

@@ -30,8 +30,8 @@ public class RobotMap {
     /**
      * Ports for the talons that control the climbing motors.
      */
-    public static final int LEFT_CLIMB_PORT = 5;
-    public static final int RIGHT_CLIMB_PORT = 4;
+    public static final int LEFT_CLIMB_PORT = 9;
+    public static final int RIGHT_CLIMB_PORT = 0;
 
     /**
      * Climber slider port numbers
@@ -84,4 +84,9 @@ public class RobotMap {
     public static final double PEG_DIST = 12.5;
     public static final double FEEDER_DIST = 6;
 
+    /**
+     * Shooter motor ports
+     */
+    public static final int SHOOTER_PORT = 4;
+    public static final int INDEXER_PORT = 5;
 }
