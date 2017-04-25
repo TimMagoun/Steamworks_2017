@@ -17,7 +17,7 @@ public class ShooterSubsystem extends Subsystem {
     private final double P_CONSTANT = 0.63;
     private final double I_CONSTANT = 0.000005;
     private final double D_CONSTANT = 0.1;
-    private final double F_CONSTANT = 0.7 * 1023 / 18000 / 60 / 10 * 4096;
+    private final double F_CONSTANT = 0.11;
 
     private CANTalon shooter;
     private CANTalon indexer;
